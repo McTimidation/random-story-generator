@@ -28,14 +28,17 @@ function result() {
 
     if (customName.value !== '') {
         const name = customName.value;
-        newStory = storyText.replaceAll('Bob', `${name}`)    
+        newStory = newStory.replaceAll('Bob', `${name}`);    
     }
 
 
     if (document.getElementById("uk").checked) {
-        const weight = Math.round(300);
-        const temperature = Math.round(94);
+        const weight = Math.round(300/14) + ' stone';
+        const temperature = Math.round((94-32)-(5/9)) + ' centigrade';
+        newStory = newStory.replace('fahrenheit', temperature);
+        newStory = newStory.replace('pounds', weight);
     }
-    story.textContent = newStory ;
+    
+    story.textContent = newStory;
     story.style.visibility = 'visible';
 }
