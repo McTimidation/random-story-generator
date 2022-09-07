@@ -1,6 +1,7 @@
 const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
+const image = document.getElementById('flag');
 
 function randomValueFromArray(array){
     const random = Math.floor(Math.random() * array.length);
@@ -37,6 +38,9 @@ function result() {
         const temperature = Math.round((94-32)-(5/9)) + ' centigrade';
         newStory = newStory.replace('fahrenheit', temperature);
         newStory = newStory.replace('pounds', weight);
+        flag.style.visibility = 'visible';
+    } else { 
+        flag.style.visibility = 'hidden';    
     }
     
     story.textContent = newStory;
