@@ -1,7 +1,7 @@
 const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
-const image = document.getElementById('flag');
+const image = document.getElementById('image');
 
 function randomValueFromArray(array){
     const random = Math.floor(Math.random() * array.length);
@@ -22,13 +22,9 @@ function result() {
 
     let newStory = storyText;
 
-    
-
     const itemX = randomValueFromArray(insertX);
     const itemY = randomValueFromArray(insertY);
     const itemZ = randomValueFromArray(insertZ);
-
-
 
    newStory = newStory.replaceAll(':insertx:', itemX);
    newStory = newStory.replaceAll(':inserty:', itemY);
@@ -55,8 +51,7 @@ function result() {
         story.textContent = trumpStory;
         if (document.getElementById("uk").checked) {
             story.textContent = "Don't check that box. Why would you check that box? You don't need the metric system. You think you need it. You don't need it. The media wants you to think it's better. I don't think so.";
-            image.style.visibility: 'visible';
             document.getElementById("image").src = "images/wrong-drumpf.gif";
         }
-    }
+     }
 }
