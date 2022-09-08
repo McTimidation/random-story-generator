@@ -30,6 +30,8 @@ function result() {
    newStory = newStory.replaceAll(':inserty:', itemY);
    newStory = newStory.replaceAll(':insertz:', itemZ);
 
+   
+
     if (customName.value !== '') {
         const name = customName.value;
         newStory = newStory.replaceAll('Bob', `${name}`);    
@@ -41,6 +43,11 @@ function result() {
         newStory = newStory.replace('94 fahrenheit', temperature);
         newStory = newStory.replace('300 pounds', weight);
         image.style.visibility = 'visible';
+        document.getElementById("image").src = "images/british-flag.jpg";
+        if (customName.value === 'Donald Trump') {
+        story.textContent = "Don't check that box. Why would you check that box? You don't need the metric system. You think you need it. You don't need it. The media wants you to think it's better. I don't think so.";
+        document.getElementById("image").src = "images/wrong-drumpf.gif";
+        }
     } else { 
         image.style.visibility = 'hidden';    
     }
@@ -50,8 +57,7 @@ function result() {
     if (customName.value === 'Donald Trump') {
         story.textContent = trumpStory;
         if (document.getElementById("uk").checked) {
-            story.textContent = "Don't check that box. Why would you check that box? You don't need the metric system. You think you need it. You don't need it. The media wants you to think it's better. I don't think so.";
-            document.getElementById("image").src = "images/wrong-drumpf.gif";
+           
         }
      }
 }
